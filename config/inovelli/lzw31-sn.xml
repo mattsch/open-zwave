@@ -1,11 +1,11 @@
 <Product xmlns='http://code.google.com/p/open-zwave/'>
     <!-- Configuration Parameters -->
   <CommandClass id="112">
-    <Value genre="config" type="byte" size="1" index="1" label="Dimming Speed" min="0" max="100" value="3">
+    <Value genre="config" type="byte" size="1" index="1" label="Ramp Rate (ZWave)" min="0" max="101" value="101">
       <Help>
-      This changes the speed in which the attached light dims up or down. A setting of 0 should turn the light immediately on or off (almost like an on/off switch). Increasing the value should slow down the transition speed.
-      Range:0-100
-      Default: 3
+      This changes the speed in which the attached light turns on or off. For example, when a user sends the switch a basicSet(value: 0xFF) or basicSet(value: 0x00), this is the speed in which those actions take place. A setting of 0 should turn the light immediately on or off (almost like an on/off switch). Increasing the value should slow down the transition speed. A setting of 101 should keep this in sync with parameter 1.
+      Range:0-101
+      Default: 101
       </Help>
     </Value>
     <Value genre="config" type="byte" size="1" index="2" label="Dimming Speed (From Switch)" min="0" max="101" value="101">
@@ -15,11 +15,11 @@
       Default: 101
       </Help>
     </Value>
-    <Value genre="config" type="byte" size="1" index="3" label="Ramp Rate" min="0" max="101" value="101">
+    <Value genre="config" type="byte" size="1" index="3" label="Dimming Speed (ZWave)" min="0" max="100" value="3">
       <Help>
-      This changes the speed in which the attached light turns on or off. For example, when a user sends the switch a basicSet(value: 0xFF) or basicSet(value: 0x00), this is the speed in which those actions take place. A setting of 0 should turn the light immediately on or off (almost like an on/off switch). Increasing the value should slow down the transition speed. A setting of 101 should keep this in sync with parameter 1.
-      Range:0-101
-      Default: 101
+      This changes the speed in which the attached light dims up or down. A setting of 0 should turn the light immediately on or off (almost like an on/off switch). Increasing the value should slow down the transition speed.
+      Range:0-100
+      Default: 3
       </Help>
     </Value>
     <Value genre="config" type="byte" size="1" index="4" label="Ramp Rate (From Switch)" min="0" max="101" value="101">
@@ -130,7 +130,7 @@
     <Item value="9" label="90%"/>
     <Item value="10" label="100%"/>
     </Value>
-	<Value genre="config" type="int" size="4" index="16" label="LED Strip Effect" min="0" max="100600575" value="0">
+    <Value genre="config" type="int" size="4" index="16" label="LED Strip Effect" min="0" max="100600575" value="0">
       <Help>
       Please see website for documentation.
       Range: 0-100600575
@@ -202,7 +202,7 @@
     <Associations num_groups="4">
       <Group index="1" label="Lifeline" max_associations="5" />
       <Group index="2" label="Basic_Set" max_associations="5" />
-	  <Group index="3" label="Switch_MultiLevel_Set" max_associations="5" />
+      <Group index="3" label="Switch_MultiLevel_Set" max_associations="5" />
       <Group index="4" label="Switch_MultiLevel_Start/Stop" max_associations="5" />
     </Associations>
   </CommandClass>
