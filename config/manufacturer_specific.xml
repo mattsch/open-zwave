@@ -1162,6 +1162,7 @@
         <Product type="0004" id="0001" name="LZW30 Switch" config="inovelli/lzw30.xml"/>
         <Product type="0001" id="0001" name="LZW31-SN Dimmer Red Series" config="inovelli/lzw31-sn.xml"/>
         <Product type="0003" id="0001" name="LZW31 Dimmer" config="inovelli/lzw31.xml"/>
+        <Product type="000d" id="0001" name="LZW60 4-in-1 Sensor" config="inovelli/lzw60.xml"/>
 	</Manufacturer>
 	<Manufacturer id="0100" name="Insignia">
 	</Manufacturer>
