@@ -1,5 +1,29 @@
-<Product xmlns='http://code.google.com/p/open-zwave/'>
+<Product Revision="1" xmlns="https://github.com/OpenZWave/open-zwave">
+  <MetaData>
+    <MetaDataItem name="OzwInfoPage">http://www.openzwave.com/device-database/031E:0001:0003</MetaDataItem>
+    <MetaDataItem name="ProductPic">images/inovelli/lzw31.png</MetaDataItem>
+    <MetaDataItem id="0001" name="ZWProductPage" type="0003">https://products.z-wavealliance.org/products/3442</MetaDataItem>
+    <MetaDataItem name="ProductPage">https://inovelli.com/shop/smart-light-switches/zwave-smart-switches-gen2/pre-order-z-wave-dimmer-switch-no-neutral-required/</MetaDataItem>
+    <MetaDataItem name="ProductSupport">https://inovelli.com/shop/smart-light-switches/zwave-smart-switches-gen2/pre-order-z-wave-dimmer-switch-no-neutral-required/</MetaDataItem>
+    <MetaDataItem name="ExclusionDescription">To Exclude your switch, put your HUB in exclusion mode and press the Configuration Button three (3) times.</MetaDataItem>
+    <MetaDataItem id="0001" name="FrequencyName" type="0003">U.S. / Canada / Mexico</MetaDataItem>
+    <MetaDataItem name="ProductManual">https://products.z-wavealliance.org/ProductManual/File?folder=&amp;filename=MarketCertificationFiles/3442/LZW31%20Manual.pdf</MetaDataItem>
+    <MetaDataItem name="ResetDescription">You may factory reset the switch by holding down the Config Button for twenty (20) or more seconds. The LED Bar will turn Red and blink three (3) times to confirm.
 
+However, we recommend using a certified Z-Wave controller to remove the device from your network for factory resetting the switch.
+
+Only use either of these procedures in the event that the network primary controller is missing or otherwise inoperable.
+</MetaDataItem>
+    <MetaDataItem name="Description">The Inovelli Dimmer has some amazing features such as a configuration button that allows you to change parameters without the need for a HUB. It also has an RGB LED bar that shows the dim level of the switch, the color and intensity can be changed and also has the ability to be off until the switch is manually dimmed. </MetaDataItem>
+    <MetaDataItem name="Name">LZW31 Dimmer</MetaDataItem>
+    <MetaDataItem id="0001" name="Identifier" type="0003">LZW31</MetaDataItem>
+    <MetaDataItem name="InclusionDescription">To include your switch, start the inclusion process on your HUB and tap the Configuration Button three (3) times.
+
+Please Note: If this doesn't work, you can check to see if your switch is within Z-Wave Range by holding down the Configuration Button for 5-10 seconds (if it's not within range, the LED Bar will indicate Red and if it is within Range, the LED Bar will indicate Green). If your switch indicates Red, please move the switch closer to the HUB. If your switch indicates Green, please try running an Exclusion to reset your switch.</MetaDataItem>
+    <ChangeLog>
+      <Entry author="Eric Maycock - ericm@inovelli.com" date="7 Nov 2019" revision="1">Initial Release</Entry>
+    </ChangeLog>
+  </MetaData>
   <!-- Configuration Parameters -->
   <CommandClass id="112">
     <Value genre="config" type="byte" size="1" index="1" label="Dimming Speed" min="0" max="100" value="3">
@@ -167,6 +191,14 @@
     <Item value="0" label="Load Only"/>
     <Item value="1" label="3-way Toggle"/>
     <Item value="2" label="3-way Momentary"/>
+    </Value>
+    </Value>
+    <Value genre="config" type="list" size="1" index="51" label="Instant On" min="0" max="1" value="1">
+       <Help>
+          Enables instant on (ie: disables the 700ms button delay). Note, if you disable the delay, it will also disable scene control except for Button 1 (ie: tap up 1x or tap down 1x) and button 7 (config button). All other buttons (2-6) will be disabled.
+       </Help>
+       <Item value="0" label="Enabled (no delay)"/>
+       <Item value="1" label="Disabled (700ms delay)"/>
     </Value>
   </CommandClass>
 
